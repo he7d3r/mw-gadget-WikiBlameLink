@@ -24,6 +24,7 @@ function addWikiBlameLink(){
 				'user_lang': mw.config.get('wgUserLanguage').replace(/-.+/g, ''),
 				'lang': mw.config.get('wgContentLanguage'),
 				'needle': prompt(tip, 'Texto'),
+				'force_wikitags': 'on',
 				'project': mw.config.get('wgServer')
 					.replace( /\/\/[a-z]+\.([a-z]+).org/, '$1' )
 			};

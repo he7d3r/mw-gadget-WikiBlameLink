@@ -22,7 +22,11 @@ function addWikiBlameLink(){
 			data = {
 				'article': mw.config.get('wgPageName'),
 				'user_lang': mw.config.get('wgUserLanguage').replace(/-.+/g, ''),
-				'lang': mw.config.get('wgContentLanguage'),
+				'lang': $.inArray( mw.config.get('wgDBname'), ['metawiki', 'specieswiki', 'commonswiki'] ) !== -1
+					? mw.config.get('wgDBname').replace(/wiki$/g, '')
+					: mw.config.get('wgDBname') === 'mediawikiwiki'
+						? 'www'
+						: mw.config.get('wgContentLanguage'),
 				'needle': prompt(tip, 'Texto'),
 				'force_wikitags': 'on',
 				'project': mw.config.get('wgServer')

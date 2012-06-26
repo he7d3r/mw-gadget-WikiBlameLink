@@ -19,14 +19,17 @@ function addWikiBlameLink(){
 		e.preventDefault();
 		var tip = 'Digite um texto no campo abaixo para saber quem o incluiu na página atual.',
 			url = 'http://wikipedia.ramselehof.de/wikiblame.php?',
+			langMap = {
+				metawiki: 'meta',
+				specieswiki: 'species',
+				commonswiki: 'commons',
+				mediawikiwiki: 'www',
+				default: mw.config.get('wgContentLanguage')
+			}
 			data = {
 				'article': mw.config.get('wgPageName'),
 				'user_lang': mw.config.get('wgUserLanguage').replace(/-.+/g, ''),
-				'lang': $.inArray( mw.config.get('wgDBname'), ['metawiki', 'specieswiki', 'commonswiki'] ) !== -1
-					? mw.config.get('wgDBname').replace(/wiki$/g, '')
-					: mw.config.get('wgDBname') === 'mediawikiwiki'
-						? 'www'
-						: mw.config.get('wgContentLanguage'),
+				'lang': langMap[ mw.config.get('wgDBname') ] || langMap.default,
 				'needle': prompt(tip, 'Texto'),
 				'force_wikitags': 'on',
 				'project': mw.config.get('wgServer')

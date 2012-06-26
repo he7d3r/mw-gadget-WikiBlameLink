@@ -23,13 +23,12 @@ function addWikiBlameLink(){
 				metawiki: 'meta',
 				specieswiki: 'species',
 				commonswiki: 'commons',
-				mediawikiwiki: 'www',
-				default: mw.config.get('wgContentLanguage')
-			}
+				mediawikiwiki: 'www'
+			},
 			data = {
 				'article': mw.config.get('wgPageName'),
 				'user_lang': mw.config.get('wgUserLanguage').replace(/-.+/g, ''),
-				'lang': langMap[ mw.config.get('wgDBname') ] || langMap.default,
+				'lang': langMap[ mw.config.get('wgDBname') ] || mw.config.get('wgContentLanguage'),
 				'needle': prompt(tip, 'Texto'),
 				'force_wikitags': 'on',
 				'project': mw.config.get('wgServer')

@@ -23,6 +23,7 @@ function addWikiBlameLink(){
 				metawiki: 'meta',
 				specieswiki: 'species',
 				commonswiki: 'commons',
+				sourceswiki: 'blank',
 				mediawikiwiki: 'www'
 			},
 			data = {
@@ -32,7 +33,7 @@ function addWikiBlameLink(){
 				'needle': prompt(tip, 'Texto'),
 				'force_wikitags': 'on',
 				'project': mw.config.get('wgServer')
-					.replace( /\/\/[a-z]+\.([a-z]+).org/, '$1' )
+					.replace( /\/\/(?:[a-z]+\.)?([a-z]+).org/, '$1' )
 			};
 		window.open( url + $.param( data ), '_blank');
 	});

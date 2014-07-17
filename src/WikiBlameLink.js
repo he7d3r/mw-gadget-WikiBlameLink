@@ -29,7 +29,8 @@ function addWikiBlameLink(){
 			specieswiki: 'species',
 			commonswiki: 'commons',
 			sourceswiki: 'blank',
-			mediawikiwiki: 'www'
+			mediawikiwiki: 'www',
+			wikidatawiki:'www'
 		};
 		data = {
 			'article': mw.config.get( 'wgPageName' ),

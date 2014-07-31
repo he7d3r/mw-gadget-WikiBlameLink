@@ -30,7 +30,8 @@ function addWikiBlameLink(){
 			commonswiki: 'commons',
 			sourceswiki: 'blank',
 			mediawikiwiki: 'www',
-			wikidatawiki:'www'
+			wikidatawiki:'www',
+			incubatorwiki: 'incubator'
 		};
 		data = {
 			'article': mw.config.get( 'wgPageName' ),

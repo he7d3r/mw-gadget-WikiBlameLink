@@ -1,7 +1,6 @@
 /**
  * Add a link to WikiBlame
- * @author: Helder (https://github.com/he7d3r)
- * @license: CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0/>
+ * @author: [[User:Helder.wiki]]
  * @tracking: [[Special:GlobalUsage/User:Helder.wiki/Tools/WikiBlameLink.js]] ([[File:User:Helder.wiki/Tools/WikiBlameLink.js]])
  */
 /*jslint browser: true, white: true, devel: true, regexp: true */
@@ -26,13 +25,14 @@ function addWikiBlameLink(){
 		}
 		url = 'http://wikipedia.ramselehof.de/wikiblame.php?';
 		langMap = {
-			metawiki: 'meta',
-			specieswiki: 'species',
 			commonswiki: 'commons',
-			sourceswiki: 'blank',
+			incubatorwiki: 'incubator',
 			mediawikiwiki: 'www',
-			wikidatawiki:'www',
-			incubatorwiki: 'incubator'
+			metawiki: 'meta',
+			simplewiki: 'simple',
+			sourceswiki: 'blank',
+			specieswiki: 'species',
+			wikidatawiki:'www'
 		};
 		data = {
 			'article': mw.config.get( 'wgPageName' ),

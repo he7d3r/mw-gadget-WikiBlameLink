@@ -1,7 +1,6 @@
 /**
  * Add a link to WikiBlame
  * @author: [[User:Helder.wiki]]
- * @tracking: [[Special:GlobalUsage/User:Helder.wiki/Tools/WikiBlameLink.js]] ([[File:User:Helder.wiki/Tools/WikiBlameLink.js]])
  */
 /*jslint browser: true, white: true, devel: true, regexp: true */
 /*global jQuery, mediaWiki */
